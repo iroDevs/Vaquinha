@@ -5,26 +5,27 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/server.ts"
+    "dev": "nodemon ./src/server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iroDevs/Vaquinha"
+    "url": "git+https://github.com/iroDevs/Vaquinha.git"
   },
   "keywords": [],
-  "author": "iroDevs",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/iroDevs/Vaquinha-Back-end/issues"
+    "url": "https://github.com/iroDevs/Vaquinha/issues"
   },
-  "homepage": "https://github.com/iroDevs/Vaquinha-Back-end#readme",
+  "homepage": "https://github.com/iroDevs/Vaquinha#readme",
   "devDependencies": {
     "eslint": "^8.20.0",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.2.4",
     "eslint-plugin-promise": "^6.0.0",
-    "nodemon": "^2.0.19",
+    "nodemon": "^2.0.19"
   },
   "dependencies": {
     "cors": "^2.8.5",
