@@ -1,0 +1,36 @@
+{
+  "name": "vaquinha-back-end",
+  "version": "1.0.0",
+  "description": "Back-end do Sistema para gerenciar vaquinha",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iroDevs/Vaquinha"
+  },
+  "keywords": [],
+  "author": "iroDevs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iroDevs/Vaquinha-Back-end/issues"
+  },
+  "homepage": "https://github.com/iroDevs/Vaquinha-Back-end#readme",
+  "devDependencies": {
+    "eslint": "^8.20.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.4",
+    "eslint-plugin-promise": "^6.0.0",
+    "nodemon": "^2.0.19",
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.3"
+  }
+}
