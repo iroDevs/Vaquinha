@@ -1,8 +1,16 @@
 ## Criar uma Seed
 
-Comando:
+##### Comando:
 >npx sequelize seed:generate --name [Nome da seed]
 
-Exemplo
+##### Exemplo
 >npx sequelize seed:generate --name users
+
+
+### Executar:
+>npx sequelize db:seed:all
+
+### Cancelar:
+>npx sequelize db:seed:undo:all
+
 
