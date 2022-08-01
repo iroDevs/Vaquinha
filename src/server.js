@@ -1,13 +1,15 @@
 
 const swaggerUi = require('swagger-ui-express')
 const swaggerOptions = require('./swagger_docs.json')
+const bodyParser = require('body-parser')
 const express = require('express')
+const admRoutes = require('./routes/admRoute')
 require('dotenv').config()
 
 const app = express()
 const port = process.env.NODE_PORT || 5000
-
-app.use(express.json())
+app.use(bodyParser.json())
+app.use('/adm', admRoutes)
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerOptions))
 

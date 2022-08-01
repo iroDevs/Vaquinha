@@ -1,4 +1,5 @@
 const AdmModel = require('../model/AdmModel')
+const validator = require('email-validator')
 
 function validAdm (adm) {
   validName(adm.name)
@@ -14,8 +15,7 @@ function validName (name) {
 }
 
 function validEmail (email) {
-  const emailRegex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i
-  if (emailRegex.test(email)) {
+  if (validator.validate(email)) {
     return true
   } else {
     throw new Error('Invalid email')
@@ -30,7 +30,7 @@ function validSenha (senha) {
 }
 
 async function RegisterAdm (adm) {
-  validAdm()
+  validAdm(adm)
   const id = await AdmModel.RegisterAdmBd(adm)
   return id
 }
