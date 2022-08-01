@@ -11,14 +11,6 @@ const doc = {
   consumes: ['application/json'],
   produces: ['application/json'],
   tags: [
-    {
-      name: 'ADM',
-      description: 'Endpoints'
-    },
-    {
-      name: 'User',
-      description: 'Endpoints'
-    }
   ],
   securityDefinitions: {
     api_key: {
@@ -37,6 +29,6 @@ const doc = {
 }
 
 const outputFile = './src/swagger_docs.json'
-const endpoints = ['./src/routes/*.js']
+const endpoints = ['./src/server.js']
 
 swaggerAutogen(outputFile, endpoints, doc)

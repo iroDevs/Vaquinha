@@ -7,16 +7,6 @@
   },
   "host": "localhost:3002",
   "basePath": "/",
-  "tags": [
-    {
-      "name": "ADM",
-      "description": "Endpoints"
-    },
-    {
-      "name": "User",
-      "description": "Endpoints"
-    }
-  ],
   "schemes": [
     "http",
     "https"
@@ -32,31 +22,35 @@
     "application/json"
   ],
   "paths": {
-    "/adms": {
+    "/adm/": {
       "post": {
         "tags": [
-          "ADM"
+          "Adms"
         ],
-        "description": "cadastre um adm",
-        "parameters": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "senha": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
-          }
-        },
-        "requestBody": {
-          "description": "Adm criado",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/definitions/ADM"
-              }
-            },
-            "application/xml": {
-              "schema": {
-                "$ref": "#/definitions/ADM"
-              }
-            }
           }
         }
       }
@@ -78,9 +72,6 @@
           "type": "string",
           "example": "senha123"
         }
-      },
-      "xml": {
-        "name": "ADM"
       }
     }
   }

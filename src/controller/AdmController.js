@@ -1,6 +1,7 @@
 const AdmService = require('../service/AdmService')
 
 async function RegisterAdm (req, res) {
+  // #swagger.tags = ['Adms']
   const adm =
   {
     name: req.body.name,
@@ -9,7 +10,7 @@ async function RegisterAdm (req, res) {
   }
   const resposta = await AdmService.RegisterAdm(adm)
 
-  return res.status(200).json(resposta)
+  return res.status(resposta.status).json(resposta.message)
 }
 
 module.exports = { RegisterAdm }

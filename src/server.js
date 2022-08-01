@@ -13,6 +13,4 @@ app.use('/adm', admRoutes)
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerOptions))
 
-app.get('/aa', (req, res) => res.send('Hello World!'))
-
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

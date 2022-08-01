@@ -31,8 +31,12 @@ function validSenha (senha) {
 
 async function RegisterAdm (adm) {
   validAdm(adm)
-  const id = await AdmModel.RegisterAdmBd(adm)
-  return id
+  const retorno = await AdmModel.RegisterAdmBd(adm)
+
+  if (!retorno.isCreated) {
+    return { message: 'Adm already registered', status: 400 }
+  }
+  return { message: 'Adm registered Successfully', status: 200 }
 }
 
 module.exports = { RegisterAdm }
