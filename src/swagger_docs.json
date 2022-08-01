@@ -2,22 +2,28 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0.0",
-    "title": "Vaquinha Back-end",
-    "description": "Documentação da API da vaquinha"
+    "title": "Vaquinha API",
+    "description": "Vaquinha api "
   },
   "host": "localhost:3002",
   "basePath": "/",
+  "tags": [
+    {
+      "name": "ADM",
+      "description": "Endpoints"
+    },
+    {
+      "name": "User",
+      "description": "Endpoints"
+    }
+  ],
   "schemes": [
     "http",
     "https"
   ],
   "securityDefinitions": {
-    "JWT": {
-      "description": "JWT token",
-      "type": "apiKey",
-      "in": "header",
-      "name": "Authorization"
-    }
+    "api_key": {},
+    "petstore_auth": {}
   },
   "consumes": [
     "application/json"
@@ -26,15 +32,55 @@
     "application/json"
   ],
   "paths": {
-    "/aa": {
-      "get": {
-        "description": "",
+    "/adms": {
+      "post": {
+        "tags": [
+          "ADM"
+        ],
+        "description": "cadastre um adm",
         "parameters": [],
         "responses": {
           "200": {
             "description": "OK"
           }
+        },
+        "requestBody": {
+          "description": "Adm criado",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/ADM"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/definitions/ADM"
+              }
+            }
+          }
         }
+      }
+    }
+  },
+  "definitions": {
+    "ADM": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Roberto"
+        },
+        "email": {
+          "type": "string",
+          "example": "Robs@robs.com"
+        },
+        "senha": {
+          "type": "string",
+          "example": "senha123"
+        }
+      },
+      "xml": {
+        "name": "ADM"
       }
     }
   }
