@@ -34,7 +34,7 @@ async function RegisterAdm (adm) {
   const retorno = await AdmModel.RegisterAdmBd(adm)
 
   if (!retorno.isCreated) {
-    throw new Error({ message: 'Adm already registered', status: 400 })
+    return { message: 'Adm already registered', status: 400 }
   }
   return { message: 'Adm registered Successfully', status: 200 }
 }

@@ -12,7 +12,7 @@ const port = process.env.NODE_PORT || 5000
 app.use(bodyParser.json())
 
 app.use('/adm', admRoutes)
-app.use(errosMiddleware)
+app.use(errosMiddleware.Erro)
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerOptions))
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

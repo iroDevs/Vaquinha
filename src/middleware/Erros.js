@@ -1,4 +1,5 @@
 async function Erro (err, req, res, next) {
+  console.log('erro: ', err)
   const msg = err.message
   const statusErro = err.status
 
