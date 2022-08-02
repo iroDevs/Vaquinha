@@ -1,0 +1,78 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Vaquinha API",
+    "description": "Vaquinha api "
+  },
+  "host": "localhost:3002",
+  "basePath": "/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "securityDefinitions": {
+    "api_key": {},
+    "petstore_auth": {}
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/adm/": {
+      "post": {
+        "tags": [
+          "Adms"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "senha": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ADM": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Roberto"
+        },
+        "email": {
+          "type": "string",
+          "example": "Robs@robs.com"
+        },
+        "senha": {
+          "type": "string",
+          "example": "senha123"
+        }
+      }
+    }
+  }
+}
